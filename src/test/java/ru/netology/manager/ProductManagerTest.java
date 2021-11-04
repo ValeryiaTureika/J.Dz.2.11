@@ -11,7 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductManagerTest {
 
-    private ProductRepository repo= new ProductRepository();
+    private ProductRepository repo = new ProductRepository();
+    
     private final Product first = new Product(1, "scarf", 250);
     private final Book second = new Book(2, "Магия утра. Как первый час дня определяет ваш успех", 500, "Хэл Элрод");
     private final TShirt third = new TShirt(3, "PUMA", 5500, "white");
@@ -25,17 +26,17 @@ class ProductManagerTest {
 
     @Test
     void shouldDeletingExistingElement() {
-        Product[] expected = {first,second};
+        Product[] expected = {first, second};
         repo.removeById(3);
 
         assertArrayEquals(expected, repo.findAll());
     }
 
-//    @Test
-//    void shouldDeletingNonExistingElement() {
-//        Product[] expected = {first,second,third};
-//        repo.removeById(8);
-//
-//        assertArrayEquals(expected, repo.findAll());
-//    }
+    @Test
+    void shouldDeletingNonExistingElement() {
+        Product[] expected = {first, second, third};
+        repo.removeById(8);
+
+        assertArrayEquals(expected, repo.findAll());
+    }
 }
