@@ -35,7 +35,7 @@ public class TShirt extends Product {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(),color);
+        return Objects.hash(super.hashCode(), color);
     }
 
     @Override
